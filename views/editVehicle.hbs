@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Vehicle</title>
+</head>
+<body>
+<h1>Edit Vehicle</h1>
+
+<form action="/vehicles/{{vehicle._id}}?_method=PUT" method="POST">
+    <label for="make">Make:</label>
+    <input type="text" id="make" name="make" required value="{{vehicle.make}}"><br><br>
+
+    <label for="vehicleModel">Model:</label>
+    <input type="text" id="vehicleModel" name="vehicleModel" required value="{{vehicle.vehicleModel}}"><br><br>
+
+    <label for="manufacturer">Manufacturer:</label>
+    <input type="text" id="manufacturer" name="manufacturer" required value="{{vehicle.manufacturer}}"><br><br>
+
+    <label for="design">Design:</label>
+    <input type="text" id="design" name="design" required value="{{vehicle.design}}"><br><br>
+
+    <label for="yearSold">Year Sold:</label>
+    <input type="number" id="yearSold" name="yearSold" required value="{{vehicle.yearSold}}"><br><br>
+
+    <button type="submit">Save Vehicle</button>
+</form>
+</body>
+</html>

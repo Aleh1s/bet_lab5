@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Inventory</title>
+
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<h1>Car Inventory</h1>
+
+<a href="/add">Add New Car</a>
+
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Manufacturer</th>
+        <th>Design</th>
+        <th>Year Sold</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#vehicles}}
+        <tr>
+            <td>{{this._id}}</td>
+            <td>{{this.make}}</td>
+            <td>{{this.vehicleModel}}</td>
+            <td>{{this.manufacturer}}</td>
+            <td>{{this.design}}</td>
+            <td>{{this.yearSold}}</td>
+            <td>
+                <a href="/vehicles/{{this._id}}/edit">Edit</a>
+                <form action="/vehicles/{{this._id}}?_method=DELETE" method="POST" style="display: inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+    {{/vehicles}}
+    </tbody>
+</table>
+</body>
+</html>
